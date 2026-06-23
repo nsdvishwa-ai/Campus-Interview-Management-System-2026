@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Details</title>
+</head>
+<body>
+
+<h2>Company Details</h2>
+
+<p><b>Name:</b> {{ company.company_name }}</p>
+<p><b>Role:</b> {{ company.role }}</p>
+<p><b>Package:</b> {{ company.package }}</p>
+<p><b>CGPA:</b> {{ company.eligibility_cgpa }}</p>
+<p><b>Deadline:</b> {{ company.deadline }}</p>
+
+<a href="{% url 'view_companies' %}">
+Back
+</a>
+
+</body>
+</html>

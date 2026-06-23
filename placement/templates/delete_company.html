@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Company</title>
+</head>
+<body>
+
+<h2>Delete Company</h2>
+
+<p>
+Are you sure you want to delete
+<b>{{ company.company_name }}</b> ?
+</p>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<button type="submit">
+Delete
+</button>
+
+</form>
+
+<br>
+
+<a href="{% url 'view_companies' %}">
+Cancel
+</a>
+
+</body>
+</html>

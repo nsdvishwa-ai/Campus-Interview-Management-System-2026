@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+
+<h1>Student Dashboard</h1>
+
+<hr>
+
+<ul>
+
+<li>
+<a href="{% url 'search_company' %}">
+Search Company
+</a>
+</li>
+
+<li>
+<a href="{% url 'eligibility' %}">
+Check Eligibility
+</a>
+</li>
+
+<li>
+<a href="{% url 'deadlines' %}">
+Upcoming Deadlines
+</a>
+</li>
+
+<li>
+<a href="{% url 'sort_package' %}">
+Sort By Package
+</a>
+</li>
+
+<li>
+<a href="{% url 'logout' %}">
+Logout
+</a>
+</li>
+
+</ul>
+
+</body>
+</html>

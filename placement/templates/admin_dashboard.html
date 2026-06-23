@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<hr>
+
+<ul>
+
+<li>
+<a href="{% url 'add_company' %}">
+Add Company
+</a>
+</li>
+
+<li>
+<a href="{% url 'view_companies' %}">
+View Companies
+</a>
+</li>
+
+<li>
+<a href="{% url 'placement_report' %}">
+Placement Report
+</a>
+</li>
+
+<li>
+<a href="{% url 'logout' %}">
+Logout
+</a>
+</li>
+
+</ul>
+
+<h2>Available Companies</h2>
+
+<table border="1">
+
+<tr>
+<th>Company</th>
+<th>Role</th>
+<th>Package</th>
+<th>Actions</th>
+</tr>
+
+{% for company in companies %}
+
+<tr>
+
+<td>{{ company.company_name }}</td>
+
+<td>{{ company.role }}</td>
+
+<td>{{ company.package }}</td>
+
+<td>
+
+<a href="{% url 'update_company' company.id %}">
+Update
+</a>
+
+|
+
+<a href="{% url 'delete_company' company.id %}">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

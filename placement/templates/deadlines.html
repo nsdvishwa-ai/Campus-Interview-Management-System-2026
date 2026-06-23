@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deadlines</title>
+</head>
+<body>
+
+<h2>Upcoming Deadlines</h2>
+
+<table border="1">
+
+<tr>
+<th>Company</th>
+<th>Deadline</th>
+</tr>
+
+{% for company in companies %}
+
+<tr>
+<td>{{ company.company_name }}</td>
+<td>{{ company.deadline }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'student_dashboard' %}">
+Back
+</a>
+
+</body>
+</html>

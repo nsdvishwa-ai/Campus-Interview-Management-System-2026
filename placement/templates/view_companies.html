@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Companies</title>
+</head>
+<body>
+
+<h1>View Companies</h1>
+
+<hr>
+
+<table border="1">
+
+<tr>
+    <th>ID</th>
+    <th>Company Name</th>
+    <th>Role</th>
+    <th>Package (LPA)</th>
+    <th>Eligibility CGPA</th>
+    <th>Deadline</th>
+    <th>Actions</th>
+</tr>
+
+{% for company in companies %}
+
+<tr>
+    <td>{{ company.id }}</td>
+    <td>{{ company.company_name }}</td>
+    <td>{{ company.role }}</td>
+    <td>{{ company.package }}</td>
+    <td>{{ company.eligibility_cgpa }}</td>
+    <td>{{ company.deadline }}</td>
+
+    <td>
+
+        <a href="{% url 'update_company' company.id %}">
+            Update
+        </a>
+
+        |
+
+        <a href="{% url 'delete_company' company.id %}">
+            Delete
+        </a>
+
+        |
+
+        <a href="{% url 'company_detail' company.id %}">
+            Details
+        </a>
+
+    </td>
+</tr>
+
+{% empty %}
+
+<tr>
+    <td colspan="7">
+        No Companies Available
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="{% url 'add_company' %}">
+    Add New Company
+</a>
+
+<br><br>
+
+<a href="{% url 'admin_dashboard' %}">
+    Back to Dashboard
+</a>
+
+</body>
+</html>

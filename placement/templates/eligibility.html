@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eligibility</title>
+</head>
+<body>
+
+<h2>Eligibility Criteria</h2>
+
+<table border="1">
+
+<tr>
+<th>Company</th>
+<th>Required CGPA</th>
+</tr>
+
+{% for company in companies %}
+
+<tr>
+<td>{{ company.company_name }}</td>
+<td>{{ company.eligibility_cgpa }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'student_dashboard' %}">
+Back
+</a>
+
+</body>
+</html>

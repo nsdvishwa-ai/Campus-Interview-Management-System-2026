@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Company</title>
+</head>
+<body>
+
+<h2>Update Company</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit">
+Update
+</button>
+
+</form>
+
+<br>
+
+<a href="{% url 'view_companies' %}">
+Back
+</a>
+
+</body>
+</html>
